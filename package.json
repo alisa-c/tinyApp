@@ -1,0 +1,22 @@
+{
+  "name": "tinyapp",
+  "version": "1.0.0",
+  "description": "web app that shortens long URLs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alisa-c/tinyApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alisa-c/tinyApp/issues"
+  },
+  "homepage": "https://github.com/alisa-c/tinyApp#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
