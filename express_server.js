@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 //creates random 6 character for the shorturl
-function generateRandomString(url) {
+function generateRandomString() {
   let random = "";
   let character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   character.split('');
@@ -36,14 +36,19 @@ app.get("/urls", (req, res) => {
 
 //adds a longURL with its created shortURL into the database
 app.post("/urls", (req, res) => {
-  let shortURL = generateRandomString(req.body.longURL);
+  let shortURL = generateRandomString();
   urlDatabase[shortURL] = req.body.longURL
-  res.redirect(`/urls/${shortURL}`);
+  res.redirect("/urls/");
 });
 
 //page where you add url
 app.get("/urls/new", (req, res) => {
   res.render("urls_new");
+});
+
+app.post("/urls/:id/update", (req, res) => {
+  urlDatabase[req.params.id] = req.body['longURL']
+  res.redirect("/urls");
 });
 
 //shows the corresponding longURL to the shortURL (id)
@@ -60,6 +65,12 @@ app.get("/u/:shortURL", (req, res) => {
   let longURL = urlDatabase[req.params.shortURL]
   res.redirect(longURL);
 });
+
+app.post("/urls/:id/delete", (req, res) => {
+  delete urlDatabase[req.params.id];
+  res.redirect("/urls");
+});
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);

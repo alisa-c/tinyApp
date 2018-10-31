@@ -11,12 +11,15 @@
 </header>
 
 <body>
+
     <ul>
       <!-- why is it urls? -->
       <% for(var url in urls){ %>
-      <li><a href='#'><%= urls[url] %></a></li>
+      <form method="POST" action="/urls/<%= url %>/delete">
+      <li><a href='#'><%= url %></a> --->  <a href='#'><%= urls[url] %></a> <a href = '/urls/<%= url %>'>Edit</a> <input type="submit" value="Delete"></li><br />
       <%  };  %>
     </ul>
+  </form>
 </body>
 
 </html>
