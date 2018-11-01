@@ -1,14 +1,17 @@
 <header>
-  <% if(username){ %>
-    <form action="/logout" method="POST" style="margin:150px;">
-      <label for="username"><%= username %></label>
+  <% if(user_id){ %>
+    <form action="/logout" method="POST">
+      <label for="email"><%= user.email %></label>
       <input type="submit" value="Logout">
     </form>
   <% } else{ %>
-    <form action="/login" method="POST" style="margin:150px;">
-      <label for="username">Enter Username:</label>
-      <input id="username" type="text" name="username" style="width: 300px">
+     <form action="/register" method="GET">
+     <!-- <label>New user?</label> -->
+      <input type="submit" value="Register">
+    </form>
+    <form action="/login" method="GET">
+    <!--  <label>Already have an account?</label> -->
       <input type="submit" value="Login">
     </form>
-  <% } %>
+  <% }    %>
 </header>
