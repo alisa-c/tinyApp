@@ -5,8 +5,8 @@ TinyApp is a full stack web application built with Node and Express that allows 
 ## Final Product
 !["This is the register page where users are able to create a new account!"](docs/register-page.png)
 !["This is the main page, which lists the users urls](docs/urls-page.png)
-![This is the new URL page, where users are able to enter a URL to be shortened and added to their list"](docs/urls-new.png)
-![This is the update page, where users can change their URL to the corresponding shorturl](docs/urls-update.png)
+![This is the new URL page, where users are able to enter a URL to be shortened and added to their list"](docs/urls-new-page.png)
+![This is the update page, where users can change their URL to the corresponding shorturl](docs/urls-update-page.png)
 
 ## Dependencies
 
