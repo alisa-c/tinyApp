@@ -7,29 +7,27 @@
 </head>
 
 <header>
-   <% include ./partials/_header %>
+  <% include ./partials/_header %>
 </header>
-
-<body>
-
+  <body>
     <ul>
-      <!-- why is it urls? -->
-      <!-- reminder the form needs to be inside the loop other wise it will not create seperate forms for each url  -->
       <% for(const url in urls){ %>
-      <form method="POST" action="/urls/<%= url %>/delete">
         <li>
           <%= url %> --->
-          <a href='/u/<%= url %>'><%= urls[url] %></a>
-          <a href = '/urls/<%= url %>'>Edit</a>
-          <input type="submit" value="Delete">
+            <a href='/u/<%= url %>'><%= urls[url] %></a>
+              <form method="GET" action="/urls/<%= url %>">
+                <input type="submit" value="Edit">
+              </form>
+              <form method="POST" action="/urls/<%= url %>/delete">
+                <input type="submit" value="Delete">
+              </form>
         </li>
-      </form>
       <%  };  %>
     </ul>
     <form action="/urls/new" method="GET">
       <input type="submit" value="Add more urls">
     </form>
-</body>
+  </body>
 
 </html>
 

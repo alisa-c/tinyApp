@@ -2,18 +2,21 @@
 
 <html lang="en">
 
-  <head>
+<head>
   <title>TinyApp</title>
 </head>
 
   <body style="font-size:20px; padding:50px;">
-
     <form action="/login" method="POST">
       <label for="email">Email:</label>
-      <input id="email" type="email" name="email">
+        <input id="email" type="email" name="email">
       <label for="password">Password:</label>
-      <input id="password" type="password" name="password">
+        <input id="password" type="password" name="password">
       <input type="submit" value="Login">
+    </form>
+    <form action="/register" method="GET">
+     <label>Don't have an account?</label>
+      <input type="submit" value="Register">
     </form>
   </body>
 

@@ -3,19 +3,20 @@
 <html lang="en">
 
   <head>
-  <title>TinyApp</title>
-</head>
-
+    <title>TinyApp</title>
+  </head>
 
   <body style="font-size:20px; padding:50px;">
     <form action="/register" method="POST">
       <label for="email">Email:</label>
-      <input id="email" type="email" name="email">
-      <br />
-      <label for="password">Password:</label>
-      <input id="password" type="password" name="password">
-      <br />
+        <input id="email" type="email" name="email">
+          <label for="password">Password:</label>
+        <input id="password" type="password" name="password">
       <input type="submit" value="Create account">
+    </form>
+    <form action="/login" method="GET">
+      <label>Already have an account?</label>
+      <input type="submit" value="Login">
     </form>
   </body>
 
